@@ -1,4 +1,4 @@
-AM_CXXFLAGS = std=c++11 -O2
+AM_CXXFLAGS = -std=c++11 -O2
 AM_LDFLAGS = -lm
 
 bin_PROGRAMS = example
