@@ -12,7 +12,8 @@ account::~account()
 account::account(service_provider *provider, phone &number)
 {
     if (!register_to_provider(provider))
-        throw std::exception("Could not register with service provider");
+        throw std::exception();
+        //throw std::exception("Could not register with service provider");
 
     set_personal_number(number);
 }
@@ -29,9 +30,11 @@ static bool is_weekend(const call_timestamp &time_point)
 money *account::make_call(const phone &other_side_number, const call_timestamp &start_time, const call_timestamp &end_time)
 {
     if (start_time == end_time)
-        throw std::exception("The call did not exist");
+        throw std::exception();
+        //throw std::exception("The call did not exist");
     else if (start_time > end_time)
-        throw std::exception("A call cannot start after it has ended");
+        throw std::exception();
+        //throw std::exception("A call cannot start after it has ended");
 
     call_duration duration = end_time - start_time;
     return service_provider::customer::make_call(duration, other_side_number, is_weekend(start_time));
