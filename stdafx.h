@@ -13,5 +13,6 @@ typedef std::chrono::time_point<std::chrono::system_clock> call_timestamp;
 #define SERVICE_PROVIDER_INSIDE_CALL_COST 0.50f
 #define SERVICE_PROVIDER_OUTSIDE_CALL_COST 0.95f
 
-#define MAKE_GETTER(x) public: const auto &get_ ## x () const { return x ## _; }
+#define MAKE_GETTER(x) public: const decltype(x ## _) &get_ ## x () const { return x ## _; }
 #define MAKE_SETTER(x) public: void set_ ## x (decltype(x ## _) &val) { x ## _ = val; }
+#define MAKE_SETTER_NONREF(x) public: void set_ ## x (decltype(x ## _) val) { x ## _ = val; }

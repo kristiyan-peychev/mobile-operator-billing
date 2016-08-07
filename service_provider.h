@@ -22,7 +22,7 @@ public:
         MAKE_GETTER(personal_number);
         MAKE_SETTER(personal_number);
         MAKE_GETTER(time_talked_inside_operator);
-        MAKE_SETTER(time_talked_inside_operator);
+        MAKE_SETTER_NONREF(time_talked_inside_operator);
         MAKE_GETTER(total_time_talked);
         MAKE_SETTER(total_time_talked);
         MAKE_GETTER(date_last_paid);
