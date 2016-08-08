@@ -1,0 +1,18 @@
+Compilation
+==================================
+
+Linux:
+`autoreconf -vif`
+`./configure`
+`make`
+
+Mac OS X:
+Install mac ports.
+Install autoreconf.
+
+Windows:
+Open the solution. Build.
+
+Usage:
+==================================
+Type `help` in the shell for more information.
